@@ -1,0 +1,128 @@
+* {
+    border: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.contenedor {
+    margin: auto;
+}
+
+header,
+main,
+aside,
+article {
+    border: solid .16em black;
+    border-radius: .33em;
+    padding: 1em;
+    margin: .33em;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+h1 {
+    font-size: 1em;
+}
+
+h2 {
+    font-size: .85em;
+}
+
+li {
+    font-size: .60em;
+    margin-left: 1em;
+}
+
+/* PC */
+@media (min-width:801px) {
+    .contenedor {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        /*grid-template-rows: .5fr 1fr;*/
+        grid-template-rows: 1fr 3fr;
+        width: 80%;
+        font-size: 30px;
+    }
+
+    img {
+        width: 3em;
+        margin-right: .30em;
+    }
+
+    header {
+        grid-area: 1 / 1 / 2 / 3;
+    }
+
+    aside {
+        grid-area: 2 / 2 / 3 / 3;
+    }
+
+    main {
+        grid-area: 2 / 1 / 3 / 2;
+        display: flex;
+        justify-content: space-around;
+    }
+
+}
+
+/* Tablet */
+@media (max-width:800px) {
+    .contenedor {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        /*grid-template-rows: .5fr 1fr;*/
+        grid-template-rows: 1fr 3fr;
+        width: 100%;
+        font-size: 16px;
+    }
+
+    img {
+        width: 2em;
+        margin-right: .30em;
+    }
+
+    header {
+        grid-area: 1 / 1 / 2 / 3;
+
+    }
+
+    aside {
+        grid-area: 2 / 2 / 3 / 3;
+    }
+
+    main {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+
+    /* Móviles */
+    @media (max-width:380px) {
+        .contenedor {
+            display: grid;
+            grid-template-columns: 1fr;
+            /*grid-template-rows: .25fr 1fr 1fr;*/
+            grid-template-rows: 1fr 2fr 3fr;
+            width: 100%;
+            font-size: 12px;
+        }
+
+        img {
+            display: none;
+        }
+
+        header {
+            grid-area: 1 / 1 / 2 / 2;
+        }
+
+        aside {
+            grid-area: 2 / 1 / 3 / 2;
+        }
+
+        main {
+            grid-area: 3 / 1 / 4 / 2;
+        }
+    }
